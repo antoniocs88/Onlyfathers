@@ -152,6 +152,56 @@ h1 span { color: var(--sage); display: block; }
   width: 100%;
   z-index: 1;
 }
+.trade-banner {
+  align-items: center;
+  background: var(--ochre);
+  color: var(--ink);
+  display: grid;
+  gap: 1.5rem 2.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin: 0 auto 7rem;
+  max-width: 1120px;
+  padding: 2rem 2.5rem;
+  position: relative;
+}
+.trade-banner::before,
+.trade-banner::after {
+  border: 1px solid var(--ink);
+  content: '';
+  pointer-events: none;
+  position: absolute;
+}
+.trade-banner::before { inset: 0.55rem -0.55rem -0.55rem 0.55rem; }
+.trade-banner::after { inset: -0.55rem 0.55rem 0.55rem -0.55rem; }
+.banner-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+.trade-banner h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.9;
+  max-width: 18ch;
+}
+.trade-banner > div > p:last-child { margin-top: 0.8rem; max-width: 50rem; }
+.banner-button {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.2rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, transform 180ms ease;
+  z-index: 1;
+}
+.banner-button:hover { background: var(--sage); transform: translateY(-3px); }
+.banner-button span { font-size: 1.1rem; margin-left: 0.35rem; }
+.trade-banner small { font-size: 0.7rem; grid-column: 1 / -1; }
 .image-note {
   align-items: center;
   display: flex;
@@ -205,6 +255,12 @@ footer p { color: var(--sage-light); font-size: 0.8rem; }
   .hero-copy { width: 100%; }
   h1 { font-size: clamp(5rem, 23vw, 8rem); }
   .hero-visual { margin: 0 1rem 1rem 0; width: calc(100% - 1rem); }
+  .trade-banner { align-items: start; display: flex; flex-direction: column; margin: 0 5vw 5rem; padding: 1.5rem; }
+  .trade-banner::before { inset: 0.4rem -0.4rem -0.4rem 0.4rem; }
+  .trade-banner::after { inset: -0.4rem 0.4rem 0.4rem -0.4rem; }
+  .trade-banner h2 { max-width: 15ch; }
+  .banner-button { align-self: stretch; text-align: center; }
+  .trade-banner small { margin-top: -0.3rem; }
   .section { padding: 5rem 5vw; }
   .section-heading, .manifesto-layout { align-items: start; display: flex; flex-direction: column; gap: 1.5rem; }
   .value-grid { grid-template-columns: 1fr; }
